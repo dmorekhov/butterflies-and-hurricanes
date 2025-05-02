@@ -1,11 +1,15 @@
 #include "FlightsInfo.h"
 #include <conio.h>
 
+void swap();
+
+
 int main() {
     FlightsInfo flights_information;
 
     int select_point;
-    while (true) {
+    bool flag = true;
+    while (flag) {
 
         cout << "1: Array input" << endl;
         cout << "2: Array output" << endl;
@@ -92,7 +96,7 @@ int main() {
             break;
         case 10:
             cout << "Bye!" << endl;
-            exit(0);
+            flag = false;
 
         default:
             cout << "Invalid Choice!" << endl;
@@ -100,5 +104,9 @@ int main() {
             break;
         }
     }
+
+    FlightsInfo copy_info(flights_information);
+    copy_info.printFlights();
+    copy_info.outputFile();
     return 0;
 }

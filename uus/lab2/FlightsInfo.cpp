@@ -13,7 +13,7 @@ FlightsInfo::FlightsInfo(const FlightsInfo& another_data) : flights(another_data
         flights_info = nullptr;
         throw invalid_argument("FlightsInfo::FlightsInfo");
     }
-    for (int i = 0 ;i < flights; ++i) {
+    for (int i = 0; i < flights; ++i) {
         flights_info[i] = another_data.flights_info[i];
     }
 }
@@ -34,6 +34,7 @@ void FlightsInfo::resize(int new_length) {
     }
 
     Departure* new_flights = new Departure[new_length];
+    // memcpy(new_flights, flights, sizeof(Departure) * flights);
     int element_copy = min(new_length, flights);
     for (int i = 0; i < element_copy; i++) {
         new_flights[i] = flights_info[i];

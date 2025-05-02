@@ -5,7 +5,8 @@ int main() {
     FlightsInfo flights_information;
 
     int select_point;
-    while (true) {
+    bool flag = true;
+    while (flag) {
 
         cout << "1: Array input" << endl;
         cout << "2: Array output" << endl;
@@ -92,12 +93,15 @@ int main() {
             break;
         case 10:
             cout << "Bye!" << endl;
-            exit(0);
+            flag = false;
+            // exit(0);
         default:
             cout << "Invalid Choice!" << endl;
             getch();
             break;
         }
     }
-
+    FlightsInfo new_info = flights_information;
+    cout << new_info << endl;
+    return 0;
 }
