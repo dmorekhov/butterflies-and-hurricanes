@@ -4,6 +4,8 @@
 #include <iostream>
 #include "FlightStruct.h"
 
+class FlightsStats;
+
 using namespace std;
 
 class FlightsInfo {
@@ -15,7 +17,7 @@ public:
     FlightsInfo(const FlightsInfo& another_data);
     ~FlightsInfo();
 
-    void addFlight(const Departure& flight);
+    void addFlight(Departure& flight);
     void deleteFlight(int& flight_number);
 
     void resize(int new_length);
@@ -30,11 +32,12 @@ public:
 
     friend ostream& operator<<(ostream& out, const FlightsInfo& info);
     FlightsInfo& operator=(const FlightsInfo& another_data);
+
+    friend void getStats(const FlightsInfo& info, FlightsStats& result, bool by_destination);
 };
 
 bool compareNamesUtil(Departure& flight1, Departure& flight2);
 bool compareYearsUtil(Departure& flight1, Departure& flight2);
 bool compareCostUtil(Departure& flight1, Departure& flight2);
-
 
 #endif //FLIGHTSINFO_H

@@ -12,7 +12,7 @@ FlightsInfo::FlightsInfo(const FlightsInfo& another_data) : flights(another_data
         flights_info = nullptr;
         throw invalid_argument("FlightsInfo::FlightsInfo");
     }
-    for (int i = 0 ;i < flights; ++i) {
+    for (int i = 0; i < flights; ++i) {
         flights_info[i] = another_data.flights_info[i];
     }
 }
@@ -45,7 +45,9 @@ void FlightsInfo::resize(int new_length) {
     flights_info = new_flights;
 }
 
-void FlightsInfo::addFlight(const Departure& flight) {
+void FlightsInfo::addFlight(Departure& flight) {
+    flight.destination[0] = toupper(flight.destination[0]);
+    flight.plane[0] = toupper(flight.plane[0]);
     resize(flights + 1);
     flights_info[flights - 1] = flight;
 }

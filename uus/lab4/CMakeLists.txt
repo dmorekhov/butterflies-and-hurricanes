@@ -11,4 +11,7 @@ add_executable(lab4
         main.cpp
         FlightsStats.cpp
         FlightsStats.h
-        FlightStruct.h)
+        FlightStruct.h
+        StatsUtil.cpp
+        FlightStruct.cpp
+)
