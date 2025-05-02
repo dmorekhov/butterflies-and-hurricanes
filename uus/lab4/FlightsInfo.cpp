@@ -103,8 +103,14 @@ void FlightsInfo::inputFile() {
     }
     flights = line_counter;
     for (int i = 0; i < flights; ++i) {
-        file >> flights_info[i].plane >> flights_info[i].destination >> flights_info[i].cost >> flights_info[i].date.year >>
+        string temp_plane;
+        string temp_destination;
+        file >> temp_plane >> temp_destination >> flights_info[i].cost >> flights_info[i].date.year >>
         flights_info[i].date.month >> flights_info[i].date.day >> flights_info[i].date.hour >> flights_info[i].date.minute;
+        temp_plane[0] = toupper(temp_plane[0]);
+        flights_info[i].plane = temp_plane;
+        temp_destination[0] = toupper(temp_destination[0]);
+        flights_info[i].destination = temp_destination;
     }
 
     file.close();

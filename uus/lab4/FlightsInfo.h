@@ -2,9 +2,11 @@
 #define FLIGHTSINFO_H
 
 #include <iostream>
+
 #include "FlightStruct.h"
 
 class FlightsStats;
+class FlightsSearcher;
 
 using namespace std;
 
@@ -34,6 +36,9 @@ public:
     FlightsInfo& operator=(const FlightsInfo& another_data);
 
     friend void getStats(const FlightsInfo& info, FlightsStats& result, bool by_destination);
+    friend void findFlightsByDestination(const FlightsInfo& info, FlightsSearcher& result, const string& dest);
+    friend void findFlightsByPlane(const FlightsInfo& info, FlightsSearcher& result, const string& plane);
+    friend void findFlightByCostRange(const FlightsInfo& info, FlightsSearcher& result, double min, double max);
 };
 
 bool compareNamesUtil(Departure& flight1, Departure& flight2);

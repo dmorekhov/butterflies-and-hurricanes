@@ -1,7 +1,11 @@
 #ifndef FLIGHTSLIST_H
 #define FLIGHTSLIST_H
 
-#include "FlightStruct.h"
+#include <iomanip>
+#include <string>
+#include <iostream>
+
+using namespace std;
 
 class FlightsInfo;
 

@@ -34,6 +34,4 @@ ostream& operator<<(ostream& os, const Date& date);
 
 ostream& operator<<(ostream& os, const Departure& flight);
 
-istream& operator>>(istream& is, Departure& s);
-
 #endif //FLIGHTSTRUCT_H

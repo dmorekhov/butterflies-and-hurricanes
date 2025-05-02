@@ -14,4 +14,8 @@ add_executable(lab4
         FlightStruct.h
         StatsUtil.cpp
         FlightStruct.cpp
+        FlightsSearcher.cpp
+        FlightsSearcher.h
+        SearchUtil.cpp
+        FlightsManage.h
 )
