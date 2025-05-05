@@ -1,0 +1,10 @@
+=== Flights statistic ===
+Categories: 4
+1. Novosibirsk: 1 flights
+Average cost: 7360.50
+2. Moscow: 1 flights
+Average cost: 301424.14
+3. Ufa: 2 flights
+Average cost: 11325.39
+4. Yakutsk: 1 flights
+Average cost: 20011.00
