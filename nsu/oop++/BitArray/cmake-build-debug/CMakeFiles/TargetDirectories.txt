@@ -1,0 +1,3 @@
+C:/Users/mitya/OneDrive/Документы/Studystudy/oopccp/23202-orekhov-oop-cpp/task-1/cmake-build-debug/CMakeFiles/task_1.dir
+C:/Users/mitya/OneDrive/Документы/Studystudy/oopccp/23202-orekhov-oop-cpp/task-1/cmake-build-debug/CMakeFiles/edit_cache.dir
+C:/Users/mitya/OneDrive/Документы/Studystudy/oopccp/23202-orekhov-oop-cpp/task-1/cmake-build-debug/CMakeFiles/rebuild_cache.dir

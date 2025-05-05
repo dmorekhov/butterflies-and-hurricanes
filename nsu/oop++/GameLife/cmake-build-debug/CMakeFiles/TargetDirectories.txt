@@ -1,0 +1,6 @@
+C:/Users/mitya/OneDrive/Документы/Studystudy/oopccp/23202-orekhov-oop-cpp/task-2/cmake-build-debug/CMakeFiles/task_2.dir
+C:/Users/mitya/OneDrive/Документы/Studystudy/oopccp/23202-orekhov-oop-cpp/task-2/cmake-build-debug/CMakeFiles/edit_cache.dir
+C:/Users/mitya/OneDrive/Документы/Studystudy/oopccp/23202-orekhov-oop-cpp/task-2/cmake-build-debug/CMakeFiles/rebuild_cache.dir
+C:/Users/mitya/OneDrive/Документы/Studystudy/oopccp/23202-orekhov-oop-cpp/task-2/cmake-build-debug/src/CMakeFiles/src_lib.dir
+C:/Users/mitya/OneDrive/Документы/Studystudy/oopccp/23202-orekhov-oop-cpp/task-2/cmake-build-debug/src/CMakeFiles/edit_cache.dir
+C:/Users/mitya/OneDrive/Документы/Studystudy/oopccp/23202-orekhov-oop-cpp/task-2/cmake-build-debug/src/CMakeFiles/rebuild_cache.dir

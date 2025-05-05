@@ -1,0 +1,236 @@
+{
+	"configurations" : 
+	[
+		{
+			"directories" : 
+			[
+				{
+					"build" : ".",
+					"childIndexes" : 
+					[
+						1
+					],
+					"hasInstallRule" : true,
+					"jsonFile" : "directory-.-Debug-d0094a50bb2071803777.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.26"
+					},
+					"projectIndex" : 0,
+					"source" : ".",
+					"targetIndexes" : 
+					[
+						0
+					]
+				},
+				{
+					"build" : "GoogleTest",
+					"childIndexes" : 
+					[
+						2
+					],
+					"hasInstallRule" : true,
+					"jsonFile" : "directory-GoogleTest-Debug-515f69215821a57f50a8.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.26"
+					},
+					"parentIndex" : 0,
+					"projectIndex" : 1,
+					"source" : "GoogleTest",
+					"targetIndexes" : 
+					[
+						1
+					]
+				},
+				{
+					"build" : "GoogleTest/lib",
+					"childIndexes" : 
+					[
+						3
+					],
+					"hasInstallRule" : true,
+					"jsonFile" : "directory-GoogleTest.lib-Debug-7c53527b335c9732f6a2.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.13"
+					},
+					"parentIndex" : 1,
+					"projectIndex" : 2,
+					"source" : "GoogleTest/lib"
+				},
+				{
+					"build" : "GoogleTest/lib/googlemock",
+					"childIndexes" : 
+					[
+						4
+					],
+					"hasInstallRule" : true,
+					"jsonFile" : "directory-GoogleTest.lib.googlemock-Debug-12d359947b502a8467bb.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.13"
+					},
+					"parentIndex" : 2,
+					"projectIndex" : 3,
+					"source" : "GoogleTest/lib/googlemock",
+					"targetIndexes" : 
+					[
+						2,
+						3
+					]
+				},
+				{
+					"build" : "GoogleTest/lib/googletest",
+					"hasInstallRule" : true,
+					"jsonFile" : "directory-GoogleTest.lib.googletest-Debug-c1e0fb4bb689d52f5a2e.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.13"
+					},
+					"parentIndex" : 3,
+					"projectIndex" : 4,
+					"source" : "GoogleTest/lib/googletest",
+					"targetIndexes" : 
+					[
+						4,
+						5
+					]
+				}
+			],
+			"name" : "Debug",
+			"projects" : 
+			[
+				{
+					"childIndexes" : 
+					[
+						1
+					],
+					"directoryIndexes" : 
+					[
+						0
+					],
+					"name" : "23202_orekhov_oop_cpp",
+					"targetIndexes" : 
+					[
+						0
+					]
+				},
+				{
+					"childIndexes" : 
+					[
+						2
+					],
+					"directoryIndexes" : 
+					[
+						1
+					],
+					"name" : "GoogleTest",
+					"parentIndex" : 0,
+					"targetIndexes" : 
+					[
+						1
+					]
+				},
+				{
+					"childIndexes" : 
+					[
+						3
+					],
+					"directoryIndexes" : 
+					[
+						2
+					],
+					"name" : "googletest-distribution",
+					"parentIndex" : 1
+				},
+				{
+					"childIndexes" : 
+					[
+						4
+					],
+					"directoryIndexes" : 
+					[
+						3
+					],
+					"name" : "gmock",
+					"parentIndex" : 2,
+					"targetIndexes" : 
+					[
+						2,
+						3
+					]
+				},
+				{
+					"directoryIndexes" : 
+					[
+						4
+					],
+					"name" : "gtest",
+					"parentIndex" : 3,
+					"targetIndexes" : 
+					[
+						4,
+						5
+					]
+				}
+			],
+			"targets" : 
+			[
+				{
+					"directoryIndex" : 0,
+					"id" : "23202_orekhov_oop_cpp::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-23202_orekhov_oop_cpp-Debug-bf7904b1d93e0e141fd2.json",
+					"name" : "23202_orekhov_oop_cpp",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 1,
+					"id" : "Google_Tests_run::@b7da687d4e8a37977221",
+					"jsonFile" : "target-Google_Tests_run-Debug-0a9941e45ca2ec119e8b.json",
+					"name" : "Google_Tests_run",
+					"projectIndex" : 1
+				},
+				{
+					"directoryIndex" : 3,
+					"id" : "gmock::@c0f695c1cac26dc834dd",
+					"jsonFile" : "target-gmock-Debug-1cdc7b27e09d8ae53e8a.json",
+					"name" : "gmock",
+					"projectIndex" : 3
+				},
+				{
+					"directoryIndex" : 3,
+					"id" : "gmock_main::@c0f695c1cac26dc834dd",
+					"jsonFile" : "target-gmock_main-Debug-1f7f653e54d5d763c230.json",
+					"name" : "gmock_main",
+					"projectIndex" : 3
+				},
+				{
+					"directoryIndex" : 4,
+					"id" : "gtest::@d5a41e2dac9a68e54809",
+					"jsonFile" : "target-gtest-Debug-42f8ebed512790610359.json",
+					"name" : "gtest",
+					"projectIndex" : 4
+				},
+				{
+					"directoryIndex" : 4,
+					"id" : "gtest_main::@d5a41e2dac9a68e54809",
+					"jsonFile" : "target-gtest_main-Debug-6877718b1db0cd8d6ae8.json",
+					"name" : "gtest_main",
+					"projectIndex" : 4
+				}
+			]
+		}
+	],
+	"kind" : "codemodel",
+	"paths" : 
+	{
+		"build" : "C:/Users/mitya/OneDrive/\u0414\u043e\u043a\u0443\u043c\u0435\u043d\u0442\u044b/Studystudy/oopccp/23202-orekhov-oop-cpp/task-0/cmake-build-debug",
+		"source" : "C:/Users/mitya/OneDrive/\u0414\u043e\u043a\u0443\u043c\u0435\u043d\u0442\u044b/Studystudy/oopccp/23202-orekhov-oop-cpp/task-0"
+	},
+	"version" : 
+	{
+		"major" : 2,
+		"minor" : 7
+	}
+}

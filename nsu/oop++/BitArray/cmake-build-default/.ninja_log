@@ -1,0 +1,4 @@
+# ninja log v6
+227	305	7565965033080277	task_1.exe	58f11e9a44182d81
+6	227	7565965030859413	CMakeFiles/task_1.dir/task-1.cpp.obj	ac838c16e836cb02
+4	255	7565964866702725	CMakeFiles/task_1.dir/BitArray.cpp.obj	8ece1f486bf9953c
