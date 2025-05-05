@@ -6,7 +6,8 @@ set(CMAKE_CXX_STANDARD 14)
 add_library(src_lib
         FlightsInfo.cpp
         FlightsInfo.h
-        FlightsManage.h
+        FlightsManager.h
+        FlightsManager.cpp
         FlightsSearcher.cpp
         FlightsSearcher.h
         FlightsStats.cpp
@@ -14,6 +15,7 @@ add_library(src_lib
         FlightStruct.cpp
         FlightStruct.h
         SearchUtil.cpp
-        StatsUtil.cpp)
+        StatsUtil.cpp
+        )
 
 target_include_directories(src_lib PUBLIC ${CMAKE_CURRENT_SOURCE_DIR})

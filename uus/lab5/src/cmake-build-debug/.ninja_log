@@ -1,0 +1,14 @@
+# ninja log v6
+2	254	7681716262627380	build.ninja	6cd4c8ee75a75a86
+5	366	7681716262937793	CMakeFiles/src_lib.dir/FlightsManager.cpp.obj	5463129634d42eb9
+14	369	7681716263020462	CMakeFiles/src_lib.dir/FlightStruct.cpp.obj	39974555d4aa6c8f
+17	376	7681716263062262	CMakeFiles/src_lib.dir/SearchUtil.cpp.obj	6754778e4a5611d3
+20	401	7681716263086388	CMakeFiles/src_lib.dir/StatsUtil.cpp.obj	d732efc4e8e270e1
+8	455	7681716262966532	CMakeFiles/src_lib.dir/FlightsSearcher.cpp.obj	786a84b8d30a9682
+11	484	7681716262992349	CMakeFiles/src_lib.dir/FlightsStats.cpp.obj	31c84abda280d086
+1	511	7681716262901362	CMakeFiles/src_lib.dir/FlightsInfo.cpp.obj	41227d98f02e1a66
+511	589	7681716267996499	libsrc_lib.a	56b275e99f66203b
+4	250	7681717005181540	CMakeFiles/src_lib.dir/FlightsManager.cpp.obj	5463129634d42eb9
+251	344	7681717007647199	libsrc_lib.a	56b275e99f66203b
+4	248	7681735484696647	CMakeFiles/src_lib.dir/FlightsManager.cpp.obj	5463129634d42eb9
+249	327	7681735487135535	libsrc_lib.a	56b275e99f66203b
