@@ -1,0 +1,16 @@
+# ninja log v6
+10	1017	7565102196475384	lib/googletest/CMakeFiles/gtest_main.dir/src/gtest_main.cc.obj	86272e80ac5e1a9a
+6	7088	7565102196423258	lib/googletest/CMakeFiles/gtest.dir/src/gtest-all.cc.obj	7d1fbd7af2fc2649
+7	1174	7565316282366684	CMakeFiles/Google_Tests_run.dir/BitArray_test.obj	52b6527f374301df
+8	1751	7565103189489949	lib/libgtest.a	d36b0f0166e4dd5a
+1751	1865	7565103206928765	lib/libgtest_main.a	ade4873c19f52fb0
+4	262	7565954409468484	build.ninja	90118ae07932c6e
+6	292	7565314573068384	CMakeFiles/Google_Tests_run.dir/db000f6d52c7551deed1af22a3a0e4d5/Studystudy/oopccp/23202-orekhov-oop-cpp/task-1/BitArray.obj	26b6753f2dc80142
+1175	2375	7565316294045337	Google_Tests_run.exe	2164cd1c61d45898
+23	684	7565954598779653	CMakeFiles/Google_Tests_run.dir/db000f6d52c7551deed1af22a3a0e4d5/Studystudy/oopccp/23202-orekhov-oop-cpp/task-1/BitArray.obj	26b6753f2dc80142
+15	1407	7565954598711119	lib/googletest/CMakeFiles/gtest_main.dir/src/gtest_main.cc.obj	86272e80ac5e1a9a
+19	2178	7565954598736257	CMakeFiles/Google_Tests_run.dir/BitArray_test.obj	52b6527f374301df
+9	6034	7565954598649384	lib/googletest/CMakeFiles/gtest.dir/src/gtest-all.cc.obj	7d1fbd7af2fc2649
+6034	7738	7565954658894870	lib/libgtest.a	d36b0f0166e4dd5a
+7738	7782	7565954675936900	lib/libgtest_main.a	ade4873c19f52fb0
+7782	9188	7565954676371729	Google_Tests_run.exe	2164cd1c61d45898

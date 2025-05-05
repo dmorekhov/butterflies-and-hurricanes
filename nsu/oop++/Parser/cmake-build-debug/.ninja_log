@@ -1,0 +1,7 @@
+# ninja log v6
+11	263	7554803201199946	CMakeFiles/23202_orekhov_oop_cpp.dir/Parser.cpp.obj	422fe70b2564d1e1
+8	283	7554803201174844	CMakeFiles/23202_orekhov_oop_cpp.dir/FileReader.cpp.obj	7991fd2ccd788a32
+16	316	7554803201249952	CMakeFiles/23202_orekhov_oop_cpp.dir/FileWriter.cpp.obj	6c348bd57ffd7cf1
+14	462	7554803201229946	CMakeFiles/23202_orekhov_oop_cpp.dir/Statistic.cpp.obj	588696d125203519
+5	480	7554803201134920	CMakeFiles/23202_orekhov_oop_cpp.dir/task-0.cpp.obj	a18f459871e73823
+480	622	7554803205888820	23202_orekhov_oop_cpp.exe	9c8951d3d63ff92c
