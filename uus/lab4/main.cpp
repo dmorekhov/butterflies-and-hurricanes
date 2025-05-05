@@ -33,8 +33,10 @@ int main() {
         cout << "22: Search result sort by cost" << endl;
         cout << "23: Search result sort by destination" << endl;
         cout << "24: Search result sort by plane" << endl;
-        cout << "25: Exit" << endl;
-        cout << "Your choice (1-25): ";
+        cout << "25: Copy constructor for stats" << endl;
+        cout << "26: Copy constructor for searcher" << endl;
+        cout << "27: Exit" << endl;
+        cout << "Your choice (1-27): ";
         cin >> select_point;
 
         switch (select_point)
@@ -111,6 +113,7 @@ int main() {
                 cout << "Enter destination: ";
                 string dest;
                 cin >> dest;
+                dest[0] = toupper(dest[0]);
                 findFlightsByDestination(flights_information, flights_searcher, dest);
                 cout << "Flights found" << endl;
             }
@@ -120,6 +123,7 @@ int main() {
                 cout << "Enter plane name: ";
                 string plane;
                 cin >> plane;
+                plane[0] = toupper(plane[0]);
                 findFlightsByPlane(flights_information, flights_searcher, plane);
                 cout << "Flights found" << endl;
             }
@@ -215,6 +219,20 @@ int main() {
             getch();
             break;
         case 25:
+            {
+                FlightsStats copy_flights_stats(flights_stats);
+                cout << copy_flights_stats << endl;
+            }
+            getch();
+            break;
+        case 26:
+            {
+                FlightsSearcher copy_flights_searcher(flights_searcher);
+                cout << copy_flights_searcher << endl;
+            }
+            getch();
+            break;
+        case 27:
             cout << "Bye!" << endl;
             exit(0);
         default:

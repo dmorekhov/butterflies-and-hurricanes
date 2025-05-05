@@ -10,7 +10,7 @@ FlightsStats::FlightsStats(const FlightsStats& another) : size(another.size),
                 stats(another.size > 0 ? new FlightStat[another.size] : nullptr) {
     if (another.size < 0) {
         stats = nullptr;
-        throw std::invalid_argument("Invalid FlightsStats");
+        throw invalid_argument("Invalid FlightsStats");
     }
     for (int i = 0; i < another.size; i++) {
         stats[i] = another.stats[i];
