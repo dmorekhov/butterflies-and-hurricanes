@@ -13,13 +13,13 @@ struct FlightStat {
     string category;
     int count;
     double total_cost;
-
-    friend ostream& operator<<(ostream& os, const FlightStat& flight_stat) {
-        double avg_cost = flight_stat.count > 0 ? flight_stat.total_cost / flight_stat.count : 0;
-        os << flight_stat.category << ": " << flight_stat.count << " flights";
-        if (flight_stat.count > 0) {
-            os << " (average cost " << fixed << setprecision(2) << avg_cost << ")";
-        }
+    friend ostream& operator<<(ostream& os, const FlightStat& flight) {
+        const int category_width = 20;
+        const int count_width = 10;
+        const int cost_width = 15;
+        os << "| " << left << setw(category_width) << flight.category << " | "
+       << right << setw(count_width) << flight.count << " | "
+       << setw(cost_width) << fixed << setprecision(2) << flight.total_cost / flight.count  <<" |" << endl;
         return os;
     }
 };
@@ -33,7 +33,7 @@ public:
     FlightsStats(const FlightsStats& another);
     ~FlightsStats();
 
-    void WriteFile();
+    void writeFile();
 
     void sortPrices();
     void sortCategories();

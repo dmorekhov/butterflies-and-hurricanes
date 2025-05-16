@@ -102,6 +102,10 @@ FlightsSearcher& FlightsSearcher::operator=(const FlightsSearcher& another) {
 }
 
 ostream& operator<<(ostream& os, const FlightsSearcher& result) {
+    if (result.count ==  0) {
+        os << "No flights found";
+        return os;
+    }
     os << "=== Search result " << result.count << " elements ===" << endl;
     for (int i = 0; i < result.count; ++i) {
         os << i + 1 << ". " << result.results[i] << endl;

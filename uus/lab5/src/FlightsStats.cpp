@@ -37,7 +37,7 @@ FlightsStats& FlightsStats::operator=(const FlightsStats& another) {
     return *this;
 }
 
-void FlightsStats::WriteFile() {
+void FlightsStats::writeFile() {
     cout << "Enter file name: ";
     string filename;
     cin >> filename;
@@ -81,12 +81,24 @@ void FlightsStats::sortCategories() {
     sort(stats, stats + size, compareCategory);
 }
 
-ostream& operator<<(ostream& os, const FlightsStats& stats) {
-    os << "=== Flights statistics ===" << endl;
-    os << "Categories: " << stats.size << endl;
+ostream& operator<<(ostream& os, const FlightsStats& flights_stats) {
+    if (flights_stats.size == 0) {
+        os << "No flights";
+        return os;
+    }
 
-    for (int i = 0; i < stats.size; ++i) {
-        os << i + 1 << ". " << stats.stats[i] << endl;
+    string line = "+" + string(20 + 2, '-')
+                    + "+" + string(10 + 2, '-')
+                    + "+" + string(15 + 2, '-')
+                    + "+" + '\n';
+    os << "-------------------------------------------------------" << endl;
+    os << "| " << left << setw(20) << "Category" << " | "
+              << right << setw(10) << "Count" << " | "
+              << setw(15) << "Average Cost" << " |" << endl;
+    os << line;
+    for (int i = 0; i < flights_stats.size; i++) {
+        os << flights_stats.stats[i];
+        os << line;
     }
 
     return os;

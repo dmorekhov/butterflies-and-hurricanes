@@ -19,7 +19,7 @@ public:
     FlightsInfo(const FlightsInfo& another_data);
     ~FlightsInfo();
 
-    void addFlight(Departure& flight);
+    void addFlight();
     void deleteFlight(int& flight_number);
 
     void resize(int new_length);

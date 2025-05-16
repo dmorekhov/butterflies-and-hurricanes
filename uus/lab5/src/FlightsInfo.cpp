@@ -45,11 +45,24 @@ void FlightsInfo::resize(int new_length) {
     flights_info = new_flights;
 }
 
-void FlightsInfo::addFlight(Departure& flight) {
-    flight.destination[0] = toupper(flight.destination[0]);
-    flight.plane[0] = toupper(flight.plane[0]);
+void FlightsInfo::addFlight() {
+    Departure new_flight;
+    cout << "Enter new plane name: ";
+    cin >> new_flight.plane;
+    cout << "Enter plane destination: ";
+    cin >> new_flight.destination;
+    cout << "Enter flight cost: ";
+    cin >> new_flight.cost;
+    cout << "Enter departure date" << endl;
+    cout << "Year: "; cin >> new_flight.date.year;
+    cout << "Month: "; cin >> new_flight.date.month;
+    cout << "Day: "; cin >> new_flight.date.day;
+    cout << "Hour: "; cin >> new_flight.date.hour;
+    cout << "Minute: "; cin >> new_flight.date.minute;
+    new_flight.destination[0] = toupper(new_flight.destination[0]);
+    new_flight.plane[0] = toupper(new_flight.plane[0]);
     resize(flights + 1);
-    flights_info[flights - 1] = flight;
+    flights_info[flights - 1] = new_flight;
 }
 
 void FlightsInfo::deleteFlight(int& flight_number) {
@@ -197,11 +210,10 @@ ostream& operator<<(ostream& out, const FlightsInfo& info) {
     const int price_width = 12;
     const int date_width = 16;
 
-    string line = "+" + string(name_width+2, '-')
-                    + "+" + string(dest_width+2, '-')
-                    + "+" + string(price_width+2, '-')
-                    + "+" + string(date_width+2, '-') + "+" + '\n';
-
+    string line = "+" + string(name_width + 2, '-')
+                    + "+" + string(dest_width + 2, '-')
+                    + "+" + string(price_width + 2, '-')
+                    + "+" + string(date_width + 2 , '-') + "+" + '\n';
 
     out << line;
     out << "| " << left << setw(name_width) << "Plane" << " | "
@@ -212,13 +224,9 @@ ostream& operator<<(ostream& out, const FlightsInfo& info) {
 
     for (size_t i = 0; i < info.flights; ++i) {
         const Departure& current_flight = info.flights_info[i];
-        out << "| " << std::left << std::setw(name_width) << current_flight.plane << " | "
-           << setw(dest_width) << current_flight.destination << " | "
-           << right << setw(price_width) << fixed << setprecision(2) << current_flight.cost << " | "
-           << left << setw(date_width) << current_flight.date << " |" << endl;
+        out << current_flight;
+        out << line;
     }
-
-    out << line;
 
     return out;
 }

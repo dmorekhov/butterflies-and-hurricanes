@@ -32,6 +32,6 @@ struct Departure {
 
 ostream& operator<<(ostream& os, const Date& date);
 
-ostream& operator<<(ostream& os, const Departure& flight);
+ostream& operator<<(ostream& out, const Departure& current_flight);
 
 #endif //FLIGHTSTRUCT_H
