@@ -1,0 +1,15 @@
+# ninja log v6
+17	360	7691036983245618	src/CMakeFiles/src_lib.dir/FlightStruct.cpp.obj	374ad57a22e39f2
+9	98	7691230485931835	src/libsrc_lib.a	3cbdaf9429dd7417
+10	456	7691230382999517	src/CMakeFiles/src_lib.dir/FlightsInfo.cpp.obj	37abd62f74d8fea5
+24	352	7691230383147943	src/CMakeFiles/src_lib.dir/SearchUtil.cpp.obj	e56ed20806ba04be
+13	469	7691036983198332	src/CMakeFiles/src_lib.dir/FlightsSearcher.cpp.obj	5305729a601fee94
+29	359	7691230383198595	src/CMakeFiles/src_lib.dir/StatsUtil.cpp.obj	ba66e84c4d41d557
+20	420	7691230383113659	src/CMakeFiles/src_lib.dir/FlightsStats.cpp.obj	64fc36dd35321f8d
+4	255	7691233375534548	CMakeFiles/lab5.dir/main.cpp.obj	53bc2f7f975695cb
+255	354	7691233378054821	lab5.exe	8eda9c914b648fa1
+14	353	7691230383052385	src/CMakeFiles/src_lib.dir/FlightsManager.cpp.obj	f72f01bdf761f6ea
+10	305	7691237106220328	CMakeFiles/lab5.dir/main.cpp.obj	53bc2f7f975695cb
+5	315	7691237106165489	src/CMakeFiles/src_lib.dir/FlightsManager.cpp.obj	f72f01bdf761f6ea
+316	408	7691237109275968	src/libsrc_lib.a	3cbdaf9429dd7417
+408	507	7691237110203181	lab5.exe	8eda9c914b648fa1

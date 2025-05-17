@@ -1,0 +1,9 @@
+plane Ufa 11390.57 2023 11 5 23 02
+Aircar Moscow 301424.14 2034 1 4 11 56
+Airbus Novosibirsk 7360.50 2025 8 19 16 05
+Boeing Ufa 11260.20 2021 4 1 9 1
+Plane Yakutsk 20011 2026 6 3 4 40
+Cosmolet Sun 230000.20 2041 10 2 10 00
+aircar Moscow 8990 2025 6 9 16 1
+Boeing Astana 15670 2025 5 3 11 50
+Cosmolet Moon 87123.79 2 26 3 14

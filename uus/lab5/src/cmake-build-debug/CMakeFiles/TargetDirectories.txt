@@ -1,0 +1,3 @@
+C:/Users/mitya/OneDrive/Документы/Studystudy/oopccp/butterflies-and-hurricanes/uus/lab5/src/cmake-build-debug/CMakeFiles/src_lib.dir
+C:/Users/mitya/OneDrive/Документы/Studystudy/oopccp/butterflies-and-hurricanes/uus/lab5/src/cmake-build-debug/CMakeFiles/edit_cache.dir
+C:/Users/mitya/OneDrive/Документы/Studystudy/oopccp/butterflies-and-hurricanes/uus/lab5/src/cmake-build-debug/CMakeFiles/rebuild_cache.dir
