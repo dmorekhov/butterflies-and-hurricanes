@@ -11,7 +11,7 @@ int main() {
         cout << "3: Add flight to the array" << endl;
         cout << "4: Delete flight from the array" << endl;
         cout << "5: Get stats by destination" << endl;
-        cout << "6: Get stats by destination" << endl;
+        cout << "6: Get stats by plane" << endl;
         cout << "7: Print stats" << endl;
         cout << "8: Find" << endl;
         cout << "9. Print search result" << endl;

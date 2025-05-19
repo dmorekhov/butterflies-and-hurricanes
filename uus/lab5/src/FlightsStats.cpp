@@ -4,7 +4,9 @@
 #include <fstream>
 #include <iostream>
 
-FlightsStats::FlightsStats() : stats(nullptr), size(0) {}
+FlightsStats::FlightsStats() : stats(nullptr), size(0) {
+    cout << "hi" << endl;
+}
 
 FlightsStats::FlightsStats(const FlightsStats& another) : size(another.size),
                 stats(another.size > 0 ? new FlightStat[another.size] : nullptr) {
