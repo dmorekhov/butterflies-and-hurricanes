@@ -3,8 +3,8 @@
 
 int main() {
     FlightsSearcher manager;
-
     // FlightsStats stats;
+
     int select_point;
     while (true) {
         cout << "1: Array input" << endl;
@@ -87,7 +87,7 @@ int main() {
             char choice;
             cout << "Information[I], Statistics[S], Finder[F], All[A]: ";
             cin >> choice;
-            manager.managerWrite(choice);
+            // manager.managerWrite(choice);
             getch();
             break;
         }

@@ -23,8 +23,8 @@ public:
     void resize(int new_length);
 
     void inputFile();
-    virtual void write();
-    virtual void print();
+    void write();
+    void print();
 
     void sortName();
     void sortYear();

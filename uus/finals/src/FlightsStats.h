@@ -32,7 +32,8 @@ public:
     FlightsStats(const FlightsStats& another);
     ~FlightsStats();
 
-    void write() override;
+    void write();
+    void print();
 
     void sortPrices();
     void sortCategories();
@@ -41,7 +42,6 @@ public:
 
     void getStats(bool by_destination);
 
-    void print() override;
 
     friend ostream& operator<<(ostream& os, const FlightsStats& flight_stats);
 };

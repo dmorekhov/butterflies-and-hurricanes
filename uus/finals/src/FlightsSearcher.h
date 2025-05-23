@@ -17,7 +17,7 @@ public:
     void clear();
 
     void add(const Departure& departure);
-    void write() override;
+    void write();
 
     void sortByDate();
     void sortByCost();
@@ -25,7 +25,7 @@ public:
     void sortByPlane();
 
     void find(char& choice);
-    void print() override;
+    void print();
 
     FlightsSearcher& operator=(const FlightsSearcher& another);
     friend ostream& operator<<(ostream& os, const FlightsSearcher& result);
