@@ -118,13 +118,6 @@ build src/CMakeFiles/src_lib.dir/FlightsInfo.cpp.obj: CXX_COMPILER__src_lib_unsc
   OBJECT_DIR = src\CMakeFiles\src_lib.dir
   OBJECT_FILE_DIR = src\CMakeFiles\src_lib.dir
 
-build src/CMakeFiles/src_lib.dir/FlightsManager.cpp.obj: CXX_COMPILER__src_lib_unscanned_Debug C$:/Users/mitya/OneDrive/Документы/Studystudy/oopccp/butterflies-and-hurricanes/uus/finals/src/FlightsManager.cpp || cmake_object_order_depends_target_src_lib
-  DEP_FILE = src\CMakeFiles\src_lib.dir\FlightsManager.cpp.obj.d
-  FLAGS = -g -std=gnu++14 -fdiagnostics-color=always
-  INCLUDES = -IC:/Users/mitya/OneDrive/Документы/Studystudy/oopccp/butterflies-and-hurricanes/uus/finals/src
-  OBJECT_DIR = src\CMakeFiles\src_lib.dir
-  OBJECT_FILE_DIR = src\CMakeFiles\src_lib.dir
-
 build src/CMakeFiles/src_lib.dir/FlightsSearcher.cpp.obj: CXX_COMPILER__src_lib_unscanned_Debug C$:/Users/mitya/OneDrive/Документы/Studystudy/oopccp/butterflies-and-hurricanes/uus/finals/src/FlightsSearcher.cpp || cmake_object_order_depends_target_src_lib
   DEP_FILE = src\CMakeFiles\src_lib.dir\FlightsSearcher.cpp.obj.d
   FLAGS = -g -std=gnu++14 -fdiagnostics-color=always
@@ -154,7 +147,7 @@ build src/CMakeFiles/src_lib.dir/FlightStruct.cpp.obj: CXX_COMPILER__src_lib_uns
 #############################################
 # Link the static library src\libsrc_lib.a
 
-build src/libsrc_lib.a: CXX_STATIC_LIBRARY_LINKER__src_lib_Debug src/CMakeFiles/src_lib.dir/FlightsInfo.cpp.obj src/CMakeFiles/src_lib.dir/FlightsManager.cpp.obj src/CMakeFiles/src_lib.dir/FlightsSearcher.cpp.obj src/CMakeFiles/src_lib.dir/FlightsStats.cpp.obj src/CMakeFiles/src_lib.dir/FlightStruct.cpp.obj
+build src/libsrc_lib.a: CXX_STATIC_LIBRARY_LINKER__src_lib_Debug src/CMakeFiles/src_lib.dir/FlightsInfo.cpp.obj src/CMakeFiles/src_lib.dir/FlightsSearcher.cpp.obj src/CMakeFiles/src_lib.dir/FlightsStats.cpp.obj src/CMakeFiles/src_lib.dir/FlightStruct.cpp.obj
   LANGUAGE_COMPILE_FLAGS = -g
   OBJECT_DIR = src\CMakeFiles\src_lib.dir
   POST_BUILD = cd .

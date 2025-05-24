@@ -27,7 +27,9 @@ int main() {
         cout << "12: Statistics sort" << endl;
         cout << "13: Searcher sort" << endl;
         cout << "14: Copy constructor for manager" << endl << endl;
+
         cout << "0: Exit" << endl << endl;
+
         cout << "Your choice (1-14): ";
 
         cin >> select_point;
