@@ -6,8 +6,6 @@ set(CMAKE_CXX_STANDARD 14)
 add_library(src_lib
         FlightsInfo.cpp
         FlightsInfo.h
-        FlightsManager.h
-        FlightsManager.cpp
         FlightsSearcher.cpp
         FlightsSearcher.h
         FlightsStats.cpp

@@ -6,7 +6,7 @@
 
 FlightsSearcher::FlightsSearcher() : results(nullptr), count(0) {}
 
-FlightsSearcher::FlightsSearcher(const FlightsSearcher& another) : count(another.count),
+FlightsSearcher::FlightsSearcher(const FlightsSearcher& another) : FlightsStats(another), count(another.count),
     results(another.count > 0 ? new Departure[another.count] : nullptr) {
 
     if (another.count < 0) {
@@ -48,15 +48,14 @@ void FlightsSearcher::write() {
     string file_name;
     cin >> file_name;
 
-    ofstream outfile(file_name);
+    ofstream outfile(file_name, ios_base::app);
     if (!outfile.is_open()) {
         cout << "File could not be opened";
         return;
     }
-    outfile << "=== Search result " << count << " elements ===" << endl;
-    for (int i = 0; i < count; ++i) {
-        outfile << i + 1 << ". " << results[i] << endl;
-    }
+
+    outfile << *this << endl;
+
     outfile.close();
     cout << "File " << file_name << " written successfully." << endl;
 }
@@ -106,15 +105,35 @@ ostream& operator<<(ostream& os, const FlightsSearcher& result) {
         os << "No flights found";
         return os;
     }
+
     os << "=== Search result " << result.count << " elements ===" << endl;
+    const int id_width = 4;
+    const int name_width = 18;
+    const int dest_width = 18;
+    const int price_width = 10;
+    const int date_width = 16;
+    string line = "+" + string(id_width + 2, '-') + "+"
+                        + string(name_width + 2, '-')
+                        + "+" + string(dest_width + 2, '-')
+                        + "+" + string(price_width + 2, '-')
+                        + "+" + string(date_width + 2, '-') + "+" + '\n';
+    os << line;
+    os << "| " << left << setw(id_width) << "ID" << " | "
+        << setw(name_width) << "Plane" << " | "
+        << setw(dest_width) << "Destination" << " | "
+        << setw(price_width) << "Price" << " | "
+        << setw(date_width) << "Date" << " |" << endl;
+    os << line;
+
     for (int i = 0; i < result.count; ++i) {
-        os << i + 1 << ". " << result.results[i] << endl;
+        os << "| " << left << setw(id_width) << i + 1 << " " << result.results[i];
+        os << line;
     }
     os << "=======================" << endl;
     return os;
 }
 
-void FlightsSearcher::find(char& choice) {
+void FlightsSearcher::find(const char& choice) {
     switch (toupper(choice)) {
         case 'P': {
             string plane_name;
@@ -170,7 +189,7 @@ void FlightsSearcher::findFlightsByPlane(const string& plane) {
     }
 }
 
-void FlightsSearcher::findFlightByCostRange(double min, double max) {
+void FlightsSearcher::findFlightByCostRange(const double& min, const double& max) {
     clear();
     for (int i = 0; i < flights; ++i) {
         const Departure& dep = flights_info[i];
@@ -182,4 +201,33 @@ void FlightsSearcher::findFlightByCostRange(double min, double max) {
 
 void FlightsSearcher::print() {
     cout << *this << endl;
+}
+
+void FlightsSearcher::sortFinder(const char& choice) {
+    switch (toupper(choice)) {
+        case 'P': {
+            sortByPlane();
+            cout << "Search results were sorted by plane names" << endl;
+            break;
+        }
+        case 'C': {
+            sortByCost();
+            cout << "Search results were sorted by cost" << endl;
+            break;
+        }
+        case 'Y': {
+            sortByDate();
+            cout << "Search results were sorted by date" << endl;
+            break;
+        }
+        case 'D': {
+            sortByDestination();
+            cout << "Search results were sorted by destination" << endl;
+            break;
+        }
+        default: {
+            cout << "Wrong input!" << endl;
+            break;
+        }
+    }
 }

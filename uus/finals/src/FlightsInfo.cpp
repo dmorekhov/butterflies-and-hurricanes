@@ -21,7 +21,7 @@ FlightsInfo::~FlightsInfo() {
     delete[] flights_info;
 }
 
-void FlightsInfo::resize(int new_length) {
+void FlightsInfo::resize(const int new_length) {
     if (new_length < 0) {
         cout << "Bad length" << endl;
         return;
@@ -65,14 +65,14 @@ void FlightsInfo::addFlight() {
     flights_info[flights - 1] = new_flight;
 }
 
-void FlightsInfo::deleteFlight(int& flight_number) {
+void FlightsInfo::deleteFlight(const int& flight_number) {
     if (flight_number < 1 || flight_number > flights) {
         cout << "Bad flight number" << endl;
         return;
     }
 
     for (int index = flight_number - 1; index < flights - 1; ++index) {
-            flights_info[index] = flights_info[index + 1];
+        flights_info[index] = flights_info[index + 1];
     }
     int change = flights - 1;
     resize(change);
@@ -90,41 +90,7 @@ void FlightsInfo::inputFile() {
         cout << file_name << " could not be opened" << endl;
         return;
     }
-
-    int line_counter = 0;
-    Departure temp;
-    while (true) {
-        file >> temp.plane >> temp.destination >> temp.cost >> temp.date.year >> temp.date.month >>
-        temp.date.day >> temp.date.hour >> temp.date.minute;
-        if (file.fail()) {
-            break;
-        }
-        ++line_counter;
-    }
-    if (line_counter > flights || line_counter <= 0) {
-        cout << file_name << " doesn't fit. Resize" << endl;
-        resize(line_counter);
-    }
-
-    file.close();
-    file.clear();
-
-    file.open(file_name.c_str());
-    if (file.fail()) {
-        cout << file_name << " could not be opened" << endl;
-        return;
-    }
-    flights = line_counter;
-    for (int i = 0; i < flights; ++i) {
-        string temp_plane;
-        string temp_destination;
-        file >> temp_plane >> temp_destination >> flights_info[i].cost >> flights_info[i].date.year >>
-        flights_info[i].date.month >> flights_info[i].date.day >> flights_info[i].date.hour >> flights_info[i].date.minute;
-        temp_plane[0] = toupper(temp_plane[0]);
-        flights_info[i].plane = temp_plane;
-        temp_destination[0] = toupper(temp_destination[0]);
-        flights_info[i].destination = temp_destination;
-    }
+    file >> *this;
 
     file.close();
     cout << file_name << " file successfully read" << endl;
@@ -133,34 +99,17 @@ void FlightsInfo::inputFile() {
 void FlightsInfo::write() {
     ofstream file;
     string file_name;
+
     cout << "Enter the file name: ";
     cin >> file_name;
     file.open(file_name, ios_base::app);
+
     if (!file.is_open()) {
         cout << "Can't open file" << endl;
         return;
     }
-    file << " " << string(104, '_') << endl;
-    file << "| " << left << setw(6) << "Number"
-         << "| " << setw(20) << "Plane Name"
-         << "| " << setw(12) << "Ticket Price"
-         << "| " << setw(20) << "Destination"
-         << "| " << setw(30) << "Arrival Date and Time" << "      |" << endl;
-    file << "|" << string(103, '_') << "|" << endl;
 
-    for (int i = 0; i < flights; ++i) {
-        file << "| " << left << setw(6) << i + 1
-        << "| " << setw(20) << flights_info[i].plane
-        << "| " << setw(12) << flights_info[i].cost
-        << "| " << setw(20) << flights_info[i].destination
-        << "| " << setw(2) << flights_info[i].date.day << "."
-        << setw(2) << flights_info[i].date.month << "."
-        << setw(4) << flights_info[i].date.year << " "
-        << setw(2) << flights_info[i].date.hour << ":"
-        << setw(2) << setfill('0') << flights_info[i].date.minute
-        << setfill(' ') << "                   |" << endl;
-        file << " " << string(104, '-') << endl;
-    }
+    file << *this << endl;
 
     file.close();
     cout << file_name << " file has been written" << endl;
@@ -170,8 +119,6 @@ void FlightsInfo::write() {
 bool compareNamesUtil(Departure& flight1, Departure& flight2) {
     string name1 = flight1.plane;
     string name2 = flight2.plane;
-    transform(name1.begin(), name1.end(), name1.begin(), [](unsigned char c) { return toupper(c); });
-    transform(name2.begin(), name2.end(), name2.begin(), [](unsigned char c) { return toupper(c); });
     return name1 < name2;
 }
 
@@ -200,35 +147,108 @@ void FlightsInfo::sortDate() {
     sort(flights_info, flights_info + flights);
 }
 
+void FlightsInfo::sortInfo(const char& choice) {
+    switch (toupper(choice)) {
+        case 'P': {
+            sortName();
+            cout << "Information was sorted by plane names" << endl;
+            break;
+        }
+        case 'C': {
+            sortCost();
+            cout << "Information was sorted by cost" << endl;
+            break;
+        }
+        case 'Y': {
+            sortYear();
+            cout << "Information was sorted by year" << endl;
+            break;
+        }
+        case 'D': {
+            sortDate();
+            cout << "Information was sorted by date" << endl;
+            break;
+        }
+        default: {
+            cout << "Wrong input!" << endl;
+            break;
+        }
+    }
+}
+
 ostream& operator<<(ostream& out, const FlightsInfo& info) {
     if (info.flights == 0) {
         out << "No flights found" << endl;
         return out;
     }
-    const int name_width = 20;
-    const int dest_width = 20;
-    const int price_width = 12;
+    const int id_width = 8;
+    const int name_width = 18;
+    const int dest_width = 18;
+    const int price_width = 10;
     const int date_width = 16;
 
-    string line = "+" + string(name_width + 2, '-')
+    string line = "+" + string(id_width + 2, '-')
+                    + string(name_width + 2, '-')
                     + "+" + string(dest_width + 2, '-')
                     + "+" + string(price_width + 2, '-')
-                    + "+" + string(date_width + 2 , '-') + "+" + '\n';
+                    + "+" + string(date_width + 2, '-') + "+" + '\n';
 
     out << line;
-    out << "| " << left << setw(name_width) << "Plane" << " | "
-       << setw(dest_width) << "Destination" << " | "
-       << setw(price_width) << "Price" << " | "
-       << setw(date_width) << "Date" << " |" << endl;
+    out << "| " << left << setw(id_width) << "ID" << "| "
+        << setw(name_width) << "Plane" << " | "
+        << setw(dest_width) << "Destination" << " | "
+        << setw(price_width) << "Price" << " | "
+        << setw(date_width) << "Date" << " |" << endl;
     out << line;
 
     for (size_t i = 0; i < info.flights; ++i) {
         const Departure& current_flight = info.flights_info[i];
-        out << current_flight;
+        out << "| " << left << setw(id_width) << i + 1 << current_flight;
         out << line;
     }
 
     return out;
+}
+
+istream& operator>>(istream& is, FlightsInfo& info) {
+    int line_counter = 0;
+    Departure temp;
+
+    streampos begin = is.tellg();
+
+    while (true) {
+        is >> temp.plane >> temp.destination >> temp.cost >> temp.date.year >> temp.date.month >>
+        temp.date.day >> temp.date.hour >> temp.date.minute;
+        if (is.fail()) {
+            break;
+        }
+        ++line_counter;
+    }
+    if (!is.eof()) {
+        is.clear();
+        is.seekg(begin);
+        cerr << "File data error" << endl;
+        return is;
+    }
+
+    is.clear();
+    is.seekg(begin);
+
+    delete[] info.flights_info;
+    info.flights = line_counter;
+    info.flights_info = new Departure[info.flights];
+
+    for (int i = 0; i < info.flights; ++i) {
+        string temp_plane;
+        string temp_destination;
+        is >> temp_plane >> temp_destination >> info.flights_info[i].cost >> info.flights_info[i].date.year >>
+        info.flights_info[i].date.month >> info.flights_info[i].date.day >> info.flights_info[i].date.hour >> info.flights_info[i].date.minute;
+        temp_plane[0] = toupper(temp_plane[0]);
+        info.flights_info[i].plane = temp_plane;
+        temp_destination[0] = toupper(temp_destination[0]);
+        info.flights_info[i].destination = temp_destination;
+    }
+    return is;
 }
 
 FlightsInfo& FlightsInfo::operator=(const FlightsInfo& another_data) {

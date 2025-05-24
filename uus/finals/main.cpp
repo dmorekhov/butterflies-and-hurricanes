@@ -1,29 +1,34 @@
-#include "FlightsManager.h"
+#include "FlightsSearcher.h"
 #include <conio.h>
 
 int main() {
     FlightsSearcher manager;
-    // FlightsStats stats;
 
     int select_point;
     while (true) {
+        cout << "Information handler" << endl;
         cout << "1: Array input" << endl;
         cout << "2: Array output" << endl;
         cout << "3: Add flight to the array" << endl;
-        cout << "4: Delete flight from the array" << endl;
+        cout << "4: Delete flight from the array" << endl << endl;;
+
+        cout << "Statistics handler" << endl;
         cout << "5: Get stats by destination" << endl;
         cout << "6: Get stats by plane" << endl;
-        cout << "7: Print stats" << endl;
+        cout << "7: Print stats" << endl << endl;
+
+        cout << "Searcher handler" << endl;
         cout << "8: Find" << endl;
-        cout << "9. Print search result" << endl;
+        cout << "9: Print search result" << endl << endl;
+
+        cout << "Saving and sorting" << endl;
         cout << "10: Save to file" << endl;
         cout << "11: Information sort" << endl;
         cout << "12: Statistics sort" << endl;
         cout << "13: Searcher sort" << endl;
-        cout << "14: Copy constructor for manager" << endl;
-        cout << "15: Manager print" << endl;
-        cout << "16: Exit" << endl;
-        cout << "Your choice (1-16): ";
+        cout << "14: Copy constructor for manager" << endl << endl;
+        cout << "0: Exit" << endl << endl;
+        cout << "Your choice (1-14): ";
 
         cin >> select_point;
 
@@ -87,7 +92,29 @@ int main() {
             char choice;
             cout << "Information[I], Statistics[S], Finder[F], All[A]: ";
             cin >> choice;
-            // manager.managerWrite(choice);
+            switch(toupper(choice)) {
+                case 'I': {
+                    manager.FlightsInfo::write();
+                    break;
+                }
+                case 'S': {
+                    manager.FlightsStats::write();
+                    break;
+                }
+                case 'F': {
+                    manager.FlightsSearcher::write();
+                    break;
+                }
+                case 'A': {
+                    manager.FlightsInfo::write();
+                    manager.FlightsStats::write();
+                    manager.FlightsSearcher::write();
+                    break;
+                } default: {
+                    cout << "Invalid choice" << endl;
+                    break;
+                }
+            }
             getch();
             break;
         }
@@ -96,7 +123,7 @@ int main() {
             char choice;
             cout << "Plane[P], Cost[C], Year[Y], Date[D]: ";
             cin >> choice;
-            // manager.sortInformation(choice);
+            manager.sortInfo(choice);
             getch();
             break;
         }
@@ -105,7 +132,7 @@ int main() {
             char choice;
             cout << "Price[P], Categories[C]: ";
             cin >> choice;
-            // manager.sortStatistics(choice);
+            manager.sortStatistics(choice);
             getch();
             break;
         }
@@ -114,23 +141,24 @@ int main() {
             char choice;
             cout << "Plane[P], Cost[C], Date[Y], Destination[D]: ";
             cin >> choice;
-            // manager.sortSearch(choice);
+            manager.sortFinder(choice);
             getch();
             break;
         }
         case 14: {
-            // FlightsManager copy_manager(manager);
+            FlightsSearcher copy_manager(manager);
             cout << "Current copy manager" << endl;
-            cout << manager << endl;
+            manager.FlightsInfo::print();
+            manager.FlightsStats::print();
+            manager.FlightsSearcher::print();
             cout << "New copy manager" << endl;
-            // cout << copy_manager << endl;
-        }
-        case 15: {
-            cout << manager << endl;
+            copy_manager.FlightsInfo::print();
+            copy_manager.FlightsStats::print();
+            copy_manager.FlightsSearcher::print();
             getch();
             break;
         }
-        case 16: {
+        case 0: {
             cout << "Bye!" << endl;
             exit(0);
         }

@@ -9,7 +9,6 @@ private:
     Departure* results;
     int count;
 public:
-
     FlightsSearcher();
     FlightsSearcher(const FlightsSearcher& another);
     ~FlightsSearcher();
@@ -19,12 +18,13 @@ public:
     void add(const Departure& departure);
     void write();
 
+    void sortFinder(const char& choice);
     void sortByDate();
     void sortByCost();
     void sortByDestination();
     void sortByPlane();
 
-    void find(char& choice);
+    void find(const char& choice);
     void print();
 
     FlightsSearcher& operator=(const FlightsSearcher& another);
@@ -32,7 +32,7 @@ public:
 
     void findFlightsByDestination(const string& dest);
     void findFlightsByPlane(const string& plane);
-    void findFlightByCostRange(double min, double max);
+    void findFlightByCostRange(const double& min, const double& max);
 };
 
 bool compCostUtil(const Departure& a, const Departure& b);

@@ -4,8 +4,6 @@
 #include <iostream>
 #include "FlightStruct.h"
 
-class FlightsSearcher;
-
 using namespace std;
 
 class FlightsInfo {
@@ -18,13 +16,15 @@ public:
     ~FlightsInfo();
 
     void addFlight();
-    void deleteFlight(int& flight_number);
+    void deleteFlight(const int& flight_number);
 
-    void resize(int new_length);
+    void resize(const int new_length);
 
     void inputFile();
     void write();
     void print();
+
+    void sortInfo(const char& choice);
 
     void sortName();
     void sortYear();
@@ -32,6 +32,7 @@ public:
     void sortCost();
 
     friend ostream& operator<<(ostream& out, const FlightsInfo& info);
+    friend istream& operator>>(istream& is, FlightsInfo& info);
     FlightsInfo& operator=(const FlightsInfo& another_data);
 };
 

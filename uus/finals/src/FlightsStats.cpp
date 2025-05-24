@@ -6,7 +6,7 @@
 
 FlightsStats::FlightsStats() : stats(nullptr), size(0) {}
 
-FlightsStats::FlightsStats(const FlightsStats& another) : size(another.size),
+FlightsStats::FlightsStats(const FlightsStats& another) : FlightsInfo(another), size(another.size),
                 stats(another.size > 0 ? new FlightStat[another.size] : nullptr) {
     if (another.size < 0) {
         stats = nullptr;
@@ -42,23 +42,14 @@ void FlightsStats::write() {
     string filename;
     cin >> filename;
 
-    ofstream outfile(filename);
+    ofstream outfile(filename, ios_base::app);
     if (!outfile.is_open()) {
         cout << "File could not be opened" << endl;
         return;
     }
-    outfile << "=== Flights statistic ===" << endl;
-    outfile << "Categories: " << size << endl;
 
-    for (int i = 0; i < size; ++i) {
-        FlightStat stat = stats[i];
-        double average_cost = stat.count > 0 ? stat.total_cost / stat.count : 0;
-        outfile << i + 1 << ". " << stat.category << ": " << stat.count << " flights" << endl;
-        if (stat.count > 0) {
-            outfile << "Average cost: " << fixed << setprecision(2) << average_cost;
-        }
-        outfile << endl;
-    }
+    outfile << *this << endl;
+
     outfile.close();
     cout << "File " << filename <<  " written successfully" << endl;
 }
@@ -91,7 +82,7 @@ ostream& operator<<(ostream& os, const FlightsStats& flights_stats) {
                     + "+" + string(10 + 2, '-')
                     + "+" + string(15 + 2, '-')
                     + "+" + '\n';
-    os << "-------------------------------------------------------" << endl;
+    os << "+-----------------------------------------------------+" << endl;
     os << "| " << left << setw(20) << "Category" << " | "
               << right << setw(10) << "Count" << " | "
               << setw(15) << "Average Cost" << " |" << endl;
@@ -110,10 +101,10 @@ void FlightsStats::getStats(bool by_destination) {
         stats = nullptr;
         size = 0;
     }
-    cout << flights << endl;
+
     FlightStat* temporary_data = new FlightStat[flights];
     int unique_counter = 0;
-    cout << flights << endl;
+
     for (int i = 0; i < flights; ++i) {
         Departure& departure = flights_info[i];
         string choose_category = by_destination ? departure.destination : departure.plane;
@@ -143,4 +134,23 @@ void FlightsStats::getStats(bool by_destination) {
 
 void FlightsStats::print() {
     cout << *this << endl;
+}
+
+void FlightsStats::sortStatistics(const char& choice) {
+    switch (toupper(choice)) {
+        case 'P': {
+            sortPrices();
+            cout << "Statistics was sorted by price" << endl;
+            break;
+        }
+        case 'C': {
+            sortCategories();
+            cout << "Statistics was sorted by categories" << endl;
+            break;
+        }
+        default: {
+            cout << "Wrong input!" << endl;
+            break;
+        }
+    }
 }

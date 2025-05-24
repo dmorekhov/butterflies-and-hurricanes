@@ -12,9 +12,9 @@ ostream& operator<<(ostream& os, const Date& date) {
 }
 
 ostream& operator<<(ostream& out, const Departure& current_flight) {
-    const int name_width = 20;
-    const int dest_width = 20;
-    const int price_width = 12;
+    const int name_width = 18;
+    const int dest_width = 18;
+    const int price_width = 10;
     const int date_width = 16;
     out << "| " << left << setw(name_width) << current_flight.plane << " | "
            << setw(dest_width) << current_flight.destination << " | "

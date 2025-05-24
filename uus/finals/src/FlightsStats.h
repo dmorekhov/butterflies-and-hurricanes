@@ -35,13 +35,13 @@ public:
     void write();
     void print();
 
+    void sortStatistics(const char& choice);
     void sortPrices();
     void sortCategories();
 
     FlightsStats& operator=(const FlightsStats& another);
 
     void getStats(bool by_destination);
-
 
     friend ostream& operator<<(ostream& os, const FlightsStats& flight_stats);
 };
