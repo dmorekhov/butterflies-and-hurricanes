@@ -1,0 +1,13 @@
+# ninja log v6
+6	500	8020546045191680	build.ninja	4f2b23bd1b4e86bf
+3	227	8019615180663942	CMakeFiles/ViSymb.dir/InputHandler.cpp.obj	61c7afc8e9b23820
+7	73	8020542066160926	C:/Users/mitya/OneDrive/Документы/Studystudy/oopcpp/butterflies-and-hurricanes/ViSymb/cmake-build-debug/ViSymb_autogen/timestamp	b5faefdabcb40fb
+4	231	8019614910722111	CMakeFiles/ViSymb.dir/main.cpp.obj	625c22bd9bbafad7
+1515	1701	8020542081251052	ViSymb.exe	4593326676a6501
+73	1515	8020542066826436	CMakeFiles/ViSymb.dir/src/main.cpp.obj	332e82bd5747b7b1
+7	73	8020542066160926	ViSymb_autogen/timestamp	b5faefdabcb40fb
+7	73	8020542066160926	ViSymb_autogen/mocs_compilation.cpp	b5faefdabcb40fb
+7	73	8020542066160926	C:/Users/mitya/OneDrive/Документы/Studystudy/oopcpp/butterflies-and-hurricanes/ViSymb/cmake-build-debug/ViSymb_autogen/mocs_compilation.cpp	b5faefdabcb40fb
+76	1370	8020542066862044	CMakeFiles/ViSymb.dir/src/core/SymbolManager.cpp.obj	bcdafa29a1a4ebf4
+74	119	8019709019040703	CMakeFiles/ViSymb.dir/ViSymb_autogen/mocs_compilation.cpp.obj	46382ae877ceaa4f
+79	1498	8020542066888469	CMakeFiles/ViSymb.dir/src/core/JsonReader.cpp.obj	2fc3eb81614861c

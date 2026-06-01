@@ -1,0 +1,5 @@
+C:/Users/mitya/OneDrive/Документы/Studystudy/oopcpp/butterflies-and-hurricanes/ViSymb/cmake-build-debug/CMakeFiles/ViSymb.dir
+C:/Users/mitya/OneDrive/Документы/Studystudy/oopcpp/butterflies-and-hurricanes/ViSymb/cmake-build-debug/CMakeFiles/edit_cache.dir
+C:/Users/mitya/OneDrive/Документы/Studystudy/oopcpp/butterflies-and-hurricanes/ViSymb/cmake-build-debug/CMakeFiles/rebuild_cache.dir
+C:/Users/mitya/OneDrive/Документы/Studystudy/oopcpp/butterflies-and-hurricanes/ViSymb/cmake-build-debug/CMakeFiles/ViSymb_autogen_timestamp_deps.dir
+C:/Users/mitya/OneDrive/Документы/Studystudy/oopcpp/butterflies-and-hurricanes/ViSymb/cmake-build-debug/CMakeFiles/ViSymb_autogen.dir
