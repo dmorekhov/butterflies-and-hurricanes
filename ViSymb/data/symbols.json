@@ -1,0 +1,18 @@
+{
+  "symbols": [
+    {
+      "name": "Implication",
+      "character": "⇒",
+      "tags": ["math", "logic"],
+      "shortcuts": ["->", "impl"],
+      "usage_count": 0
+    },
+    {
+      "name": "Negation",
+      "character": "¬",
+      "tags": ["math", "logic"],
+      "shortcuts": ["not", "no"],
+      "usage_count": 0
+    }
+  ]
+}
